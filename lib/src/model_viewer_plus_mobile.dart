@@ -4,12 +4,10 @@ import 'dart:async' show Completer;
 import 'dart:convert' show utf8;
 import 'dart:io'
     show File, HttpRequest, HttpServer, HttpStatus, InternetAddress, Platform;
-import 'dart:typed_data' show Uint8List;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:path/path.dart' as p;
 
-import 'package:android_intent_plus/flag.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:android_intent_plus/android_intent.dart' as android_content;
@@ -226,7 +224,7 @@ class ModelViewerState extends State<ModelViewer> {
 
   Future<void> _initProxy() async {
     final url = Uri.parse(widget.src);
-    _proxy = await HttpServer.bind(InternetAddress.loopbackIPv4, 0);
+    _proxy = await HttpServer.bind(InternetAddress.loopbackIPv4, 31747);
 
     setState(() {
       _proxy;
